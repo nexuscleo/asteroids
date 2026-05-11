@@ -1,5 +1,3 @@
-import './style.css';
-
 /* 
  * Técnica: DOM Manipulation / Caching
  * Por que: Armazenar referências de elementos do DOM evita consultas repetidas
