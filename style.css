@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #050508;
+    background-image:
+        radial-gradient(circle at 15% 50%, rgba(94, 119, 255, 0.08), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(255, 60, 60, 0.05), transparent 25%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+}
+
+.game-container {
+    position: relative;
+    /* Efeito Glassmorphism Premium */
+    background: rgba(10, 10, 15, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+        0 0 40px rgba(94, 119, 255, 0.15);
+    /* Brilho neon sutil */
+    padding: 10px;
+    /* Borda interna para destacar o canvas */
+}
+
+canvas {
+    display: block;
+    border-radius: 8px;
+    background-color: #020203;
+    /* Fundo escuro puro para o espaço */
+
+    /* Mantém a proporção nativa de 800x600 e se adapta a telas menores */
+    width: 100vw;
+    max-width: 800px;
+    height: auto;
+    aspect-ratio: 800 / 600;
+    object-fit: contain;
+
+    touch-action: none;
+    /* Crucial: previne que o toque no canvas faça a tela rolar no mobile */
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
+}
+
+footer {
+    margin-top: 50px;
+    padding: 30px;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    width: 100%;
+    text-align: center;
+}
+
+.logo-footer {
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #f1f5f9;
+}
+
+.logo-footer span {
+    color: #38bdf8;
+    text-transform: uppercase;
+}
+
+footer p {
+    margin: 5px 0;
+    opacity: 0.8;
+}
+
+/* Modo imersivo em celulares (tela cheia sem bordas) */
+@media (max-width: 840px) {
+    .game-container {
+        padding: 0;
+        border-radius: 0;
+        border: none;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: none;
+    }
+
+    canvas {
+        border-radius: 0;
+        max-width: 100%;
+        max-height: 100vh;
+    }
+}
